@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\Comment;
 use App\Models\Work;
 use Illuminate\Http\Request;
 
@@ -58,4 +59,20 @@ class BlogController extends Controller
 
         return view('pages.blog', compact('blog', 'nextBlog', 'prevBlog'));
     }
+
+
+    public function add_comment(Request $request, $id)
+    {
+        // Doğrulama kuralları
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'comment' => 'required|string|min:5',
+        ]);
+
+        $comment = Comment::create(['blog_id' => $id, 'email' => $request->email, 'full_name' => $request->name, 'comment' => $request->comment]);
+
+        return redirect()->back()->with('success', __('site.comment_added'))->withFragment('comment-success');
+    }
+
 }

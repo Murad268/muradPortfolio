@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('language/{code}', [\App\Http\Controllers\SwitchLanguageController::class, 'switch'])->name('language.switch');
-
+Route::post('add_comment/{id}', [\App\Http\Controllers\BlogController::class, 'add_comment'])->name('add_comment');
 $repository = app(\App\Repositories\MenuRepository::class);
 $lang = Cache::get('app_locale', config('app.locale'));
 

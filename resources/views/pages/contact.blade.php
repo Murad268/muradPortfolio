@@ -1,5 +1,6 @@
 @extends('layout.app')
 @section('content')
+    @include('partials._seo', ['code' => 'contact'])
     <!--================================
     BREADCRUMB START
 =================================-->

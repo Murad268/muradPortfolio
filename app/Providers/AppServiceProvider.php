@@ -4,6 +4,7 @@ namespace App\Providers;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Info;
+use App\Models\Lang;
 use App\Models\Menu;
 use App\Models\Service;
 use App\Nova\HeroString;
@@ -54,6 +55,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('allTags', $allTags);
             $menuRepository = app(MenuRepository::class);
             $view->with('menuRepository', $menuRepository);
+            $langs = Lang::where('status', 1)->get();
+            $view->with('langs', $langs);
         });
     }
 }

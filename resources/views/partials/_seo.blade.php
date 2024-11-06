@@ -1,5 +1,5 @@
 
-<title>{{$menuRepository->menuByCode($code)->name}} || Murad Agamedov</title>
+<title>{{$menuRepository->menuByCode($code)->seo_title}}</title>
 
 <!-- Meta Description -->
 <meta name="description" content="{{$menuRepository->menuByCode($code)->meta_description}}">

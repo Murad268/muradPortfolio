@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Menu;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,7 @@ class footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.footer');
+        $footerMenus = Menu::where('see_on_footer', true)->get();
+        return view('components.footer', compact('footerMenus'));
     }
 }

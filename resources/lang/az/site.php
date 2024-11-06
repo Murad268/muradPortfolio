@@ -69,4 +69,5 @@ return [
     'ok' => 'ok',
     'success_send' => 'Mesajınız uğurla göndərildi!',
     'retry' => 'tamam',
+    'comment_added' => 'şərh əlavə edildi',
 ];

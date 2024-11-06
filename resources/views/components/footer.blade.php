@@ -78,19 +78,13 @@
                         <div class="tf__footer_copyright">
                             <p>©  {{ now()->year }} <a href="https://muraddev.com/">muraddev.com</a> {{$infos->copyright_text}}</p>
                             <ul>
-                                <li>
-                                    <a href="#" class="text_hover_animaiton"
-                                    >Trams & Condition</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="text_hover_animaiton"
-                                    >Privacy Policy</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#" class="text_hover_animaiton">Sitemap</a>
-                                </li>
+                                @foreach($footerMenus as $menu)
+                                        <li class="nav-item">
+                                            <a class="nav-link text_hover_animaiton {{ request()->is($menu->code) ? 'active' : '' }}" href="{{ $menu->link }}">
+                                                {{ $menu->name }}
+                                            </a>
+                                        </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
