@@ -40,7 +40,7 @@
 
                     <ul>
                         <li>
-                            <a class="common_btn" download="true" href="{{\Illuminate\Support\Facades\Storage::url($infos->resume_file)}}">{{__('site.download_cv')}} <i class="fa-solid fa-arrow-down-to-line"></i></a>
+                            <a class="common_btn" download="MuradAgamedovResume" href="{{\Illuminate\Support\Facades\Storage::url($infos->resume_file)}}">{{__('site.download_cv')}} <i class="fa-solid fa-arrow-down-to-line"></i></a>
                         </li>
                         <li>
                             {{--
