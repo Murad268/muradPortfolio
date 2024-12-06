@@ -281,7 +281,7 @@
         <div class="row">
             <div class="col-xl-10 col-lg-9 mb_30">
                 <div class="tf__section_heading">
-                    <h5 class="has-animation">my recent Portfolio</h5>
+                    <h5 class="has-animation">{{__("site.mrp")}}</h5>
                     <h2 class="has-animation">
                         {!! $infos->subtext_portfolio !!}
 
