@@ -255,17 +255,16 @@
                     class="tf__team_skills_bar_single fade_bottom"
                     data-trigerId="skills"
                     data-stagger=".25">
-                    <p>{{ $skill->title }}</p>
-                    <div class="barfiller">
+                    <p>{{$skill->title}}</p>
+                    <div id="bar1" class="barfiller">
                         <div class="tipWrap">
                             <span class="tip"></span>
                         </div>
-                        <div class="fill" style="width: {{ $skill->percentage }}%; background-color: #00ff99; height: 5px;"></div>
+                        <span class="fill" data-percentage="{{$skill->percentage}}"></span>
                     </div>
                 </div>
             </div>
             @endforeach
-
 
         </div>
     </div>
