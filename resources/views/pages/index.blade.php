@@ -298,6 +298,7 @@
             @if($index == 0)
             <div class="col-xl-8 col-md-6">
                 <a
+                    data-cursor="{{__('site.go_to')}}"
                     target="_blank"
                     href="{{ $work->link }}"
                     class="tf__portfolio_item ">
