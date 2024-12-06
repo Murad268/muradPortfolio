@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/spacing.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" />
+    @stack('styles')
     <style>
         .hero_desc {
             height: max-content !important;
