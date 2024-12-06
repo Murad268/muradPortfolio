@@ -321,7 +321,7 @@
                         alt="{{ $work->title }}"
                         class="img-fluid w-100" />
                     <div class="text">
-                        <h4>{{ $work->title }}</h4>
+                        <h4>{{ $work->link }}</h4>
                         <p>{{ $work->category }}</p>
                     </div>
                 </a>
