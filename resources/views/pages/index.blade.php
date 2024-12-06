@@ -536,5 +536,20 @@
         });
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bars = document.querySelectorAll('.barfiller');
+
+        bars.forEach((bar) => {
+            const fill = bar.querySelector('.fill');
+            const percentage = fill.getAttribute('data-percentage');
+
+            // Proqress barı təyin edin
+            fill.style.width = percentage + '%';
+            fill.style.backgroundColor = '#00ff99'; // İstəyə uyğun rəng
+            fill.style.height = '5px'; // Bar hündürlüyü
+        });
+    });
+</script>
 
 @endpush
