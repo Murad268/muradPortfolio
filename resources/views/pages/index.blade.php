@@ -249,25 +249,22 @@
             @endforeach
         </div>
         <div class="row">
-            @foreach($skills as $index => $skill)
+            @foreach($skills as $skill)
             <div class="col-xl-6 col-lg-6">
                 <div
-                    class="custom_skill_bar_single fade_bottom"
+                    class="tf__team_skills_bar_single fade_bottom"
                     data-trigerId="skills"
                     data-stagger=".25">
-                    <p>{{ $skill->title }}</p>
-                    <div id="custom-bar-{{ $index }}" class="custom-barfiller">
-                        <div class="custom-tipWrap">
-                            <span class="custom-tip"></span>
+                    <p>{{$skill->title}}</p>
+                    <div id="bar1" class="barfiller">
+                        <div class="tipWrap">
+                            <span class="tip"></span>
                         </div>
-                        <span class="custom-fill" data-percentage="{{ $skill->percentage }}"></span>
+                        <span class="fill" data-percentage="{{$skill->percentage}}"></span>
                     </div>
                 </div>
             </div>
             @endforeach
-
-
-
 
         </div>
     </div>
@@ -538,51 +535,5 @@
         });
     });
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const bars = document.querySelectorAll('.custom-barfiller');
-
-        bars.forEach((bar) => {
-            const fill = bar.querySelector('.custom-fill');
-            const percentage = fill.getAttribute('data-percentage');
-
-            // Proqress bar genişliyini və rəngini təyin edin
-            fill.style.width = percentage + '%';
-        });
-    });
-</script>
-
 
 @endpush
-<style>
-    ..custom-barfiller {
-        position: relative;
-        background-color: #e0e0e0;
-        /* Boz arxa fon */
-        border-radius: 5px;
-        /* Daha hamar künclər */
-        height: 10px;
-        /* Proqress bar hündürlüyü artırıldı */
-        overflow: hidden;
-        margin: 10px 0;
-        /* Barlar arasında məsafə */
-    }
-
-    .custom-fill {
-        display: block;
-        height: 100%;
-        /* Barın tam hündürlüyü */
-        background-color: #00ff99;
-        /* Yaşıl rəng */
-        transition: width 0.3s ease-in-out;
-        /* Animasiya */
-        border-radius: 5px;
-        /* Hamar künclər */
-    }
-
-
-    .custom-tipWrap {
-        display: none;
-        /* Əgər lazımsızdırsa */
-    }
-</style>
