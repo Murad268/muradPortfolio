@@ -316,6 +316,7 @@
             @elseif($index == 1)
             <div class="col-xl-4 col-md-6">
                 <a
+                    data-cursor="{{__('site.go_to')}}"
                     href="{{ $work->link }}"
                     class="tf__portfolio_item ">
                     <img
@@ -332,6 +333,7 @@
             @elseif($index == 2)
             <div class="col-xl-6 col-md-6">
                 <a
+                    data-cursor="{{__('site.go_to')}}"
                     href="{{ $work->link }}"
                     class="tf__portfolio_item ">
                     <img
@@ -348,6 +350,7 @@
             @elseif($index == 3)
             <div class="col-xl-6 col-md-6">
                 <a
+                    data-cursor="{{__('site.go_to')}}"
                     href="{{ $work->link }}"
                     class="tf__portfolio_item ">
                     <img
