@@ -252,19 +252,20 @@
             @foreach($skills as $index => $skill)
             <div class="col-xl-6 col-lg-6">
                 <div
-                    class="tf__team_skills_bar_single fade_bottom"
+                    class="custom_skill_bar_single fade_bottom"
                     data-trigerId="skills"
                     data-stagger=".25">
                     <p>{{ $skill->title }}</p>
-                    <div id="bar{{ $index }}" class="barfiller">
-                        <div class="tipWrap">
-                            <span class="tip"></span>
+                    <div id="custom-bar-{{ $index }}" class="custom-barfiller">
+                        <div class="custom-tipWrap">
+                            <span class="custom-tip"></span>
                         </div>
-                        <span class="fill" data-percentage="{{ $skill->percentage }}"></span>
+                        <span class="custom-fill" data-percentage="{{ $skill->percentage }}"></span>
                     </div>
                 </div>
             </div>
             @endforeach
+
 
 
         </div>
@@ -538,13 +539,13 @@
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const bars = document.querySelectorAll('.barfiller');
+        const bars = document.querySelectorAll('.custom-barfiller');
 
         bars.forEach((bar) => {
-            const fill = bar.querySelector('.fill');
+            const fill = bar.querySelector('.custom-fill');
             const percentage = fill.getAttribute('data-percentage');
 
-            // Proqress barı təyin edin
+            // Yeni siniflərə uyğun proqress barı tənzimləyin
             fill.style.width = percentage + '%';
             fill.style.backgroundColor = '#00ff99'; // İstəyə uyğun rəng
             fill.style.height = '5px'; // Bar hündürlüyü
@@ -552,4 +553,29 @@
     });
 </script>
 
+
 @endpush
+<style>
+    .custom-barfiller {
+        position: relative;
+        background-color: #e0e0e0;
+        /* Boz arxa fon */
+        border-radius: 5px;
+        height: 5px;
+        overflow: hidden;
+    }
+
+    .custom-fill {
+        display: block;
+        height: 100%;
+        background-color: #00ff99;
+        /* İstəyə uyğun rəng */
+        transition: width 0.3s ease-in-out;
+        /* Smooth animasiya */
+    }
+
+    .custom-tipWrap {
+        display: none;
+        /* Əgər lazımsızdırsa */
+    }
+</style>
