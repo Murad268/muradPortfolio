@@ -268,6 +268,7 @@
 
 
 
+
         </div>
     </div>
 </section>
@@ -545,10 +546,8 @@
             const fill = bar.querySelector('.custom-fill');
             const percentage = fill.getAttribute('data-percentage');
 
-            // Yeni siniflərə uyğun proqress barı tənzimləyin
+            // Proqress bar genişliyini və rəngini təyin edin
             fill.style.width = percentage + '%';
-            fill.style.backgroundColor = '#00ff99'; // İstəyə uyğun rəng
-            fill.style.height = '5px'; // Bar hündürlüyü
         });
     });
 </script>
@@ -556,23 +555,31 @@
 
 @endpush
 <style>
-    .custom-barfiller {
+    ..custom-barfiller {
         position: relative;
         background-color: #e0e0e0;
         /* Boz arxa fon */
         border-radius: 5px;
-        height: 5px;
+        /* Daha hamar künclər */
+        height: 10px;
+        /* Proqress bar hündürlüyü artırıldı */
         overflow: hidden;
+        margin: 10px 0;
+        /* Barlar arasında məsafə */
     }
 
     .custom-fill {
         display: block;
         height: 100%;
+        /* Barın tam hündürlüyü */
         background-color: #00ff99;
-        /* İstəyə uyğun rəng */
+        /* Yaşıl rəng */
         transition: width 0.3s ease-in-out;
-        /* Smooth animasiya */
+        /* Animasiya */
+        border-radius: 5px;
+        /* Hamar künclər */
     }
+
 
     .custom-tipWrap {
         display: none;
