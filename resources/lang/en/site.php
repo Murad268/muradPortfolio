@@ -95,4 +95,5 @@ return [
     'ok' => 'ok',
     'success_send' => 'Your message has been successfully sent!',
     'retry' => 'okay',
+    'comment_added' => 'comment added',
 ];

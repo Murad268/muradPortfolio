@@ -71,7 +71,7 @@
                                     <div class="tf__blog_list_item">
                                         <a
                                             href="{{$project->link}}"
-                                            data-cursor="Go to <br> Site"
+                                            data-cursor="{{__('site.go_to')}}"
                                             class="tf__blog_list_img"
                                         >
                                             <img

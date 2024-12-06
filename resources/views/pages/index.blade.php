@@ -13,10 +13,10 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-xl-6 col-lg-8">
-                    <div class="tf__banner_text">
-                        <h1>
+                    <div  class="tf__banner_text">
+                        <h1 style="margin-bottom: 0;">
                             {{$infos->hero_title}}
-                            <span class="cd-headline rotate-1">
+                            <span  class="cd-headline rotate-1">
                   <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
                   <span class="cd-words-wrapper">
                       @php
@@ -32,7 +32,7 @@
                   </span>
                     </span>
                         </h1>
-                            <div  class="hero_desc">
+                            <div class="hero_desc">
                                 <p>
                                     {!! $infos->hero_description !!}
                                 </p>
@@ -46,12 +46,13 @@
                                     ></a>
                             </li>
                             <li>
+                                {{--
                                 <a
                                     class="banner_video_btn play_btn"
                                     href="https://www.youtube.com/watch?v=B-ytMSuwbf8"
-                                ><i class="fa-sharp fa-solid fa-circle-play"></i> Watch the
-                                    Video</a
+                                ><i class="fa-sharp fa-solid fa-circle-play"></i> {{__('text.Watch the Video')}}</a
                                 >
+                                --}}
                             </li>
                         </ul>
                     </div>
@@ -312,6 +313,7 @@
                     @if($index == 0)
                         <div class="col-xl-8 col-md-6">
                             <a
+                                target="_blank"
                                 href="{{ $work->link }}"
                                 class="tf__portfolio_item "
                             >
@@ -474,12 +476,7 @@
                                 />
                             </a>
                             <div class="tf__blog_text">
-                                <ul>
 
-                                    <li>
-                                        <i class="fa-sharp fa-solid fa-comments"></i> {{$blog->comments->count()}}
-                                    </li>
-                                </ul>
                                 <a href="blog_details.html"
                                 >{{$blog->title}}</a
                                 >
@@ -503,6 +500,9 @@
 
     <script>
         $(document).ready(function() {
+            if (window.location.hash === '#comment-success') {
+                document.getElementById('commentFormSection').scrollIntoView({ behavior: 'smooth' });
+            }
             $('.contactHomeForm').on('submit', function(e) {
                 e.preventDefault(); // Formun standart göndərilməsini dayandırır
 

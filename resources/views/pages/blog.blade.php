@@ -1,4 +1,26 @@
 @extends('layout.app')
+@push('scripts')
+    <title>{{$blog->title}} || Murad Agamedov</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="{{$blog->meta_description}}">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="{{$blog->seo_keywords}}">
+
+    <!-- Open Graph Image -->
+    <meta property="og:image" content="{{$blog->seo_description}}">
+
+    <!-- Open Graph Description (same as Meta Description if needed) -->
+    <meta property="og:description" content="{{$blog->seo_description}}">
+
+    <!-- Open Graph Title -->
+    <meta property="og:title" content="{{$blog->title}} || Murad Agamedov">
+
+    <!-- Open Graph Keywords (Note: Open Graph doesn’t officially support keywords, but if needed for other services) -->
+    <meta property="og:keywords" content="{{$blog->seo_keywords}}">
+@endpush
+
 @section('content')
 
     <!--================================
@@ -102,45 +124,8 @@
                                 </li>
                             @endif
                         </ul>
-                        <div class="tf__details_bloger">
-                            <h3>Stanio lainto</h3>
-                            <span>{{ $blog->created_at->format('F d, Y') }}</span>
-                            <p>
-                                ished fact that a reader will be distrol acted bioii the.ished
-                                fact that a reader will be distrol acted laoreet Aliquam fact
-                                that a reader will be distrol .
-                            </p>
-                            <a href="#">Reply</a>
-                            <div class="img">
-                                <img
-                                    src="images/testimonial/1.jpg"
-                                    alt="bloger"
-                                    class="img-fluid w-100"
-                                />
-                            </div>
-                        </div>
-                        <div class="tf__input_comment mt_90">
-                            <h2 class="has-animation">{{__('site.leave_comment')}}</h2>
-                            <form action="#">
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <input type="text" placeholder="{{__('site.form_name')}}" />
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input type="text" placeholder="{{__('site.form_email')}}" />
-                                    </div>
-                                    <div class="col-xl-12">
-                      <textarea
-                          rows="6"
-                          placeholder="{{__('site.form_comment')}}"
-                      ></textarea>
-                                        <button class="common_btn" type="submit">
-                                            {{__('site.form_post_comment')}}
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+
+
                     </div>
                 </div>
                 @include('partials.aside')
@@ -151,6 +136,5 @@
         BLOG DETAILS END
     =================================-->
 
-    @include('partials.subs')
 
 @endsection
