@@ -249,22 +249,17 @@
             @endforeach
         </div>
         <div class="row">
-            @foreach($skills as $skill)
+            @foreach($skills as $index => $skill)
             <div class="col-xl-6 col-lg-6">
-                <div
-                    class="tf__team_skills_bar_single fade_bottom"
-                    data-trigerId="skills"
-                    data-stagger=".25">
-                    <p>{{$skill->title}}</p>
-                    <div id="bar1" class="barfiller">
-                        <div class="tipWrap">
-                            <span class="tip"></span>
-                        </div>
-                        <span class="fill" data-percentage="{{$skill->percentage}}"></span>
+                <div class="custom-skill-container">
+                    <p class="skill-title">{{ $skill->title }}</p>
+                    <div class="custom-skill-bar">
+                        <div class="custom-skill-fill" style="width: {{ $skill->percentage }}%;"></div>
                     </div>
                 </div>
             </div>
             @endforeach
+
 
         </div>
     </div>
@@ -535,5 +530,55 @@
         });
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bars = document.querySelectorAll('.custom-barfiller');
 
+        bars.forEach((bar) => {
+            const fill = bar.querySelector('.custom-fill');
+            const percentage = fill.getAttribute('data-percentage');
+
+            // Proqress bar genişliyini və rəngini təyin edin
+            fill.style.width = percentage + '%';
+        });
+    });
+</script>
 @endpush
+<style>
+    .custom-skill-container {
+        margin-bottom: 15px;
+        /* Skill aralarında boşluq */
+    }
+
+    .skill-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffffff;
+        /* Mətni ağ göstərmək üçün */
+        margin-bottom: 8px;
+        /* Mətnlə bar arasında boşluq */
+    }
+
+    .custom-skill-bar {
+        position: relative;
+        width: 100%;
+        height: 8px;
+        /* Bar hündürlüyü */
+        background-color: #2a2a2a;
+        /* Arxa fonun tünd rəngi */
+        border-radius: 5px;
+        /* Küncləri hamarlaşdır */
+        overflow: hidden;
+        /* Daxili taşmaları gizlət */
+    }
+
+    .custom-skill-fill {
+        height: 100%;
+        background-color: #00ff99;
+        /* Daxili yaşıl rəng */
+        border-radius: 5px;
+        /* Küncləri hamarlaşdır */
+        transition: width 0.5s ease-in-out;
+        /* Animasiya effekti */
+    }
+</style>
