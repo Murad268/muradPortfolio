@@ -2,7 +2,47 @@
 @section('content')
 @include('partials._seo', ['code' => 'home'])
 
+@push('styles')
+<style>
+    .custom-skill-container {
+        margin-bottom: 15px;
+        /* Skill aralarında boşluq */
+    }
 
+    .skill-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffffff;
+        /* Mətni ağ göstərmək üçün */
+        margin-bottom: 8px;
+        /* Mətnlə bar arasında boşluq */
+    }
+
+    .custom-skill-bar {
+        position: relative;
+        width: 100%;
+        height: 8px;
+        /* Bar hündürlüyü */
+        background-color: #2a2a2a;
+        /* Arxa fonun tünd rəngi */
+        border-radius: 5px;
+        /* Küncləri hamarlaşdır */
+        overflow: hidden;
+        /* Daxili taşmaları gizlət */
+    }
+
+    .custom-skill-fill {
+        height: 100%;
+        background-color: #00ff99;
+        /* Daxili yaşıl rəng */
+        border-radius: 5px;
+        /* Küncləri hamarlaşdır */
+        transition: width 0.5s ease-in-out;
+        /* Animasiya effekti */
+    }
+</style>
+
+@endpush
 <!--================================
     BANNER START
 =================================-->
@@ -544,41 +584,3 @@
     });
 </script>
 @endpush
-<style>
-    .custom-skill-container {
-        margin-bottom: 15px;
-        /* Skill aralarında boşluq */
-    }
-
-    .skill-title {
-        font-size: 14px;
-        font-weight: bold;
-        color: #ffffff;
-        /* Mətni ağ göstərmək üçün */
-        margin-bottom: 8px;
-        /* Mətnlə bar arasında boşluq */
-    }
-
-    .custom-skill-bar {
-        position: relative;
-        width: 100%;
-        height: 8px;
-        /* Bar hündürlüyü */
-        background-color: #2a2a2a;
-        /* Arxa fonun tünd rəngi */
-        border-radius: 5px;
-        /* Küncləri hamarlaşdır */
-        overflow: hidden;
-        /* Daxili taşmaları gizlət */
-    }
-
-    .custom-skill-fill {
-        height: 100%;
-        background-color: #00ff99;
-        /* Daxili yaşıl rəng */
-        border-radius: 5px;
-        /* Küncləri hamarlaşdır */
-        transition: width 0.5s ease-in-out;
-        /* Animasiya effekti */
-    }
-</style>
