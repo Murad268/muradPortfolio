@@ -249,22 +249,24 @@
             @endforeach
         </div>
         <div class="row">
-            @foreach($skills as $index => $skill)
+            @foreach($skills as $skill)
             <div class="col-xl-6 col-lg-6">
                 <div
                     class="tf__team_skills_bar_single fade_bottom"
                     data-trigerId="skills"
                     data-stagger=".25">
                     <p>{{ $skill->title }}</p>
-                    <div id="bar{{ $index }}" class="barfiller">
+                    <div class="barfiller">
                         <div class="tipWrap">
                             <span class="tip"></span>
                         </div>
-                        <span class="fill" data-percentage="{{ $skill->percentage }}"></span>
+                        <div class="fill" style="width: {{ $skill->percentage }}%; background-color: #00ff99; height: 5px;"></div>
                     </div>
                 </div>
             </div>
             @endforeach
+
+
         </div>
     </div>
 </section>
